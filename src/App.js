@@ -5,7 +5,17 @@ function App() {
   return (
     <Jumbotron.Container>
       {jumboData.map((item) => {
-        return <Jumbotron key={item.id} direction={item.direction} />;
+        return (
+          <Jumbotron key={item.id} direction={item.direction}>
+            <Jumbotron.Pane>
+              <Jumbotron.Title>{item.title}</Jumbotron.Title>
+              <Jumbotron.Subtitle>{item.subTitle}</Jumbotron.Subtitle>
+            </Jumbotron.Pane>
+            <Jumbotron.Pane>
+              <Jumbotron.Pic src={item.image} alt={item.alt} />
+            </Jumbotron.Pane>
+          </Jumbotron>
+        );
       })}
     </Jumbotron.Container>
   );
